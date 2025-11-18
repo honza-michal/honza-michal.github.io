@@ -184,7 +184,7 @@ button:disabled {
     min-height: 100%;
     display: grid;
     place-items: center;
-	background-color:lightgrey;
+	background-color: #d3d3d3;
 }
 
 
