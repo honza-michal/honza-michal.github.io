@@ -1,0 +1,1 @@
+export const state={srcL:null,srcTop:null,vbL:[0,0,200,200],vbTop:[0,0,160,120],ppuL:1,ppuTop:1,scale:1,roles:{base:null,overlay:null},mirrorTop:false,wardrobeSide:'left',clipSide:'bottom',clipAmount:28,hasValidSelection:false};
