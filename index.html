@@ -8,7 +8,7 @@
             let saved = localStorage.getItem("sidebar.width.px");
             let w = parseInt(saved, 10);
             if (!isFinite(w) || w < 150 || w > window.innerWidth * 0.9) {
-                w = 320;
+                w = 370;
             }
             document.documentElement.style.setProperty("--sidebar-w", w + "px");
         })();
@@ -76,7 +76,7 @@
 
         <!-- ===================== SIDEBAR ===================== -->
         <aside class="sidebar">
-			<img src="assets/akk_logo_studie.svg" alt="AKK logo" id="logo">
+			<img src="assets/akk_logo_studie2.svg" alt="AKK logo" id="logo">
             <div class="formcol">
 
                 <!-- Project folder -->
@@ -138,13 +138,13 @@
                 <!-- Bottom / Top selects -->
                 <div class="row" data-vis-guard>
                     <h3  class="ctl-label">					
-                        VARIANTA SPODNÍ ČÁSTI PŮDORYSU:
+                        VYBERTE SPODNÍ POLOVINU PLÁNU:
 						<span class="help-tip" data-tip="Vyberte variantu spodní obdélníkové části L-kového půdorysu. Můžete scrolovat při najetí kurzorem na drop list a v kanvasu se příslušná část zobrazí. Ne všechny horní části jsou se spodními kompatibilní, proto se mohou automaticky měnit i horní části.">?</span>
                     </h3>
 					<select id="pickBottom" class="select-pill"></select>
 
                     <h3  class="ctl-label">
-                        KOMPATIBILNÍ VARIANTA HORNÍ ČÁSTI:
+                        VYBERTE KOMPATIBILNÍ HORNÍ POLOVINU PLÁNU:
 						<span class="help-tip" data-tip="Vyberte variantu horní obdélníkové části L-kového půdorysu. Můžete scrolovat při najetí kurzorem na drop list a v kanvasu se příslušná část zobrazí.">?</span>
                     </h3>
 					<select id="pickTop" class="select-pill"></select>
@@ -154,17 +154,17 @@
                 <!-- Cycler -->
                 <div class="row" data-vis-guard>
                     <h3  class="ctl-label">
-						PROCHÁZET VŠECHNY KOMPATIBILNÍ KOMBINACE:
+						PROCHÁZENÍ VŠECH KOMPATIBILNÍCH KOMBINACÍ:
 						<span class="help-tip" data-tip="Prochází postupně všechny možné kompatibilní kombinace spodních a horních částí, tak jak jdou v seznamech po sobě. Ke každé variantě spodní části existují kompatibilní horní části. Potom co se zobrazí všechny kompatibilní horní části k dané spodní části, zobrazí se další spodní část ze seznamu. PŘEDCHOZÍ a DALŠÍ - Je možné ovládat šipkami.">?</span>
 					</h3>
 					
                     <div id="cycleGroup" class="segmented two cycle-buttons">
-                        <button id="cyclePrev" type="button">PŘEDCHOZÍ</button>
-                        <button id="cycleNext" type="button">DALŠÍ</button>
+                        <button id="cyclePrev" type="button">←</button>
+                        <button id="cycleNext" type="button">→</button>
                     </div>
                 </div>
 
-                <!-- Filters ↑↓-->
+                <!-- Filters ↑↓→←-->
 				<hr />
                 <div class="row" data-vis-guard>
                     <div class="filters">
@@ -184,13 +184,13 @@
 								<label for="fEntAny">bez preference</label>
 
 								<input id="fEntW" name="fEntrance" type="radio" value="vlevo" />
-								<label for="fEntW">→</label>
+								<label for="fEntW">zleva</label>
 
 								<input id="fEntS" name="fEntrance" type="radio" value="dole" />
-								<label for="fEntS">↑</label>
+								<label for="fEntS">zdola</label>
 
 								<input id="fEntE" name="fEntrance" type="radio" value="vpravo" />
-								<label for="fEntE">←</label>
+								<label for="fEntE">zprava</label>
 							</div>
 						</div>
 						
@@ -200,7 +200,7 @@
 							<label for="fGarage">pouze s garáží</label>
 							
 							<label class="ctl-label">
-								orientace garáže: svisle či vodorovně
+								orientace garáže:
 								<span class="help-tip" data-tip="Ukáže jen ty výsledky, kdy je delší strana garáže orientovaná buď svisle či vodorovně na plánku">?</span>
 							</label>
 							
@@ -209,10 +209,10 @@
 								<label for="fGAny">bez preference</label>
 								
 								<input id="fGV" name="fGarageOrient" type="radio" value="svisle" />
-								<label for="fGV">↑</label>
+								<label for="fGV">svisle</label>
 
 								<input id="fGH" name="fGarageOrient" type="radio" value="vodorovně" />
-								<label for="fGH">→</label>
+								<label for="fGH">vodorovně</label>
 							</div>
 							
 							<label class="ctl-label">
@@ -225,13 +225,13 @@
 								<label for="fGEAny">bez preference</label>
 
 								<input id="fGEW" name="fGarageEntrance" type="radio" value="vlevo" />
-								<label for="fGEW">→</label>
+								<label for="fGEW">zleva</label>
 
 								<input id="fGES" name="fGarageEntrance" type="radio" value="dole" />
-								<label for="fGES">↑</label>
+								<label for="fGES">zdola</label>
 
 								<input id="fGEE" name="fGarageEntrance" type="radio" value="vpravo" />
-								<label for="fGEE">←</label>
+								<label for="fGEE">zprava</label>
 							</div>
 						</div>
 						
@@ -267,14 +267,8 @@
                 <div class="row" data-vis-guard>
                     <h3  class="ctl-label">
 						UMÍSTĚNÍ ÚLOŽNÝCH PROSTORŮ NA CHODBĚ ↔
-						<span class="help-tip" data-tip="Tyká se především úložných prostorů - skříní v prostoru chodby. Je možné je přemísťovat z jedné strany na druhou, dle preferencí.">?</span>
+						<span class="help-tip" data-tip="Tyká se především úložných prostorů - skříní v prostoru chodby. Je přednastaveno automaticky, při zaškrtnutí políčka manuálního ovládání je možné úložné prostory přemisťovat z jedné strany na druhou, dle vaších preferencí.">?</span>
 					</h3>
-					
-                    <h3  class="ctl-label" style="font-size: 0.9em;"> 
-                        <input id="wardrobeManual"  class="uiColors" type="checkbox" />
-                        ZAPNOUT MANUÁLNÍ PŘEPÍNÁNÍ
-						<span class="help-tip" data-tip="Pokud políčko zaškrtete můžete ručně přepínat na jaké straně chodby se úložné prostory nachází. Když není zaškrnuté, tak se zobrazuje automaticky přednastavené zarovnání úložných prostorů a přepínač vlevo - vpravo je vypnutý.">?</span>
-                    </h3>
                     <div id="wardrobeSwitch" class="segmented two">
                         <input id="wardrobeL" name="wardrobeSide" type="radio" value="left" checked />
                         <label for="wardrobeL">VLEVO</label>
@@ -282,6 +276,11 @@
                         <input id="wardrobeR" name="wardrobeSide" type="radio" value="right" />
                         <label for="wardrobeR">VPRAVO</label>
                     </div>
+					<h3  class="ctl-label" style="font-size: 0.9em;"> 
+                        <input id="wardrobeManual"  class="uiColors" type="checkbox" />
+                        ZAPNOUT MANUÁLNÍ PŘEPÍNÁNÍ
+						<span class="help-tip" data-tip="Pokud políčko zaškrtete můžete ručně přepínat na jaké straně chodby se úložné prostory nachází. Když není zaškrnuté, tak se zobrazuje automaticky přednastavené zarovnání úložných prostorů a přepínač vlevo - vpravo je vypnutý.">?</span>
+                    </h3>
                 </div>
 				
                 <!-- Anchors -->
