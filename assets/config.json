@@ -59,7 +59,7 @@
     },
     "text": {
         "normalize": true,
-        "fontSize": 40,
+        "fontSize": 25,
         "fontFamily": "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif",
         "lineHeight": 5
     }
