@@ -1,0 +1,66 @@
+{
+    "debug": false,
+    "anchors": {
+        "bottom": "anchorBottom",
+        "top": "anchorTop"
+    },
+    "wardrobeLayers": {
+        "bottomLeft": "bottomL",
+        "bottomRight": "bottomR",
+        "topLeft": "topL",
+        "topRight": "topR"
+    },
+    "visibilityPolicy": {
+        "defaults": {
+            "theme": "enabled"
+        },
+        "launch": {
+            "theme": "enabled",
+            "autozoom": "hidden",
+            "project": "hidden",
+            "combos": "hidden",
+            "cycle": "hidden",
+            "mirror": "hidden",
+            "storage": "hidden",
+            "anchors": "hidden",
+            "scale": "hidden",
+            "exportSvg": "hidden",
+            "exportPng": "hidden",
+            "filters": "hidden"
+        },
+        "afterIndex": {
+            "theme": "enabled",
+            "autozoom": "enabled",
+            "project": "hidden",
+            "combos": "enabled",
+            "cycle": "disabled",
+            "mirror": "disabled",
+            "storage": "disabled",
+            "anchors": "hidden",
+            "scale": "disabled",
+            "exportSvg": "disabled",
+            "exportPng": "disabled",
+            "filters": "disabled"
+        },
+        "validSelection": {
+            "theme": "enabled",
+            "autozoom": "enabled",
+            "project": "hidden",
+            "combos": "enabled",
+            "cycle": "enabled",
+            "mirror": "enabled",
+            "storage": "enabled",
+            "anchors": "hidden",
+            "scale": "enabled",
+            "exportSvg": "enabled",
+            "exportPng": "enabled",
+            "filters": "enabled"
+        }
+    },
+    "text": {
+        "normalize": true,
+        "fontSize": 20,
+        "fontFamily": "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif",
+        "lineHeight": 5
+    }
+}

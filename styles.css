@@ -1,0 +1,665 @@
+:root {
+    --bg: #22272D;
+    --panel: #22272D;
+    --ink: #eaf1ff;
+    --muted: #eaf1ff;
+    --border: grey;
+    --accent: #2d6cdf;
+    --accent-2: #4a7fe2;
+    --canvas-bg: #22272D;
+    --vscroll-w: 10px;
+    --sidebar-w: 20vw;
+    --resizer-w: 8px;
+}
+
+html[data-theme="light"] { /*  */
+    --bg: white;
+    --panel: #ffffff;
+    --ink: #0c1220;
+    --muted: #5f6b85;
+    --border: #d7deea;
+    --accent:  #2a66d2; /* button colors #2a66d2; */
+    --accent-2: #366fe0;
+    --canvas-bg: #f2f6ff;
+	
+}
+
+/* === Dark mode canvas & center wrapper === */
+
+html[data-theme="dark"] .centerWrap {
+    /* background behind the SVG/canvas in dark mode */
+    background: #22272D;           /* pick your dark background */
+}
+
+html[data-theme="dark"] #stage {
+    /* background directly under the floorplan in dark mode */
+    background-color: 29323F; /* or #05070b / #000 if you prefer */
+}
+
+html[data-theme="dark"] .segmented.locked input:checked + label{
+	 background-color: grey;
+}
+.uiColors {
+	accent-color: #2d6cdf;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in oklab, var(--panel) 94%, transparent);
+    backdrop-filter: blur(6px);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+button,
+input,
+label {
+    color: var(--ink);
+}
+
+button,
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.primary {
+    background: var(--accent);
+    border-color: var(--accent-2);
+    color: #fff;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) var(--resizer-w) 1fr;
+    height: calc(100dvh - 52px);
+}
+
+.sidebar {
+    border-right: 1px solid var(--border);
+    background: var(--panel);
+    padding: 12px;
+    overflow-y: auto;      /* ✅ keep vertical scrolling */
+    overflow-x: visible;   /* ✅ let tooltip spill out horizontally */
+    text-align: center;
+    /* scrollbar-gutter: stable; comment: reserves space on the right side for the scrollbar to appear, for now I disable it because there is not so much things in the sidebar as of now. */
+}
+
+.formcol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formcol .row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formcol hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 8px 0;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.resizer {
+    background: transparent;
+    cursor: col-resize;
+}
+
+.resizer::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1px;
+    margin: 0 auto;
+    background: color-mix(in oklab, var(--ink) 20%, transparent);
+}
+
+.preview {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+}
+
+.scrollHost {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+.centerWrap {
+    min-width: 100%;
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+
+#stage {
+    display: block;
+    width: max-content;
+    height: max-content;
+    padding: 20px calc(20px + var(--vscroll-w)) 20px 20px;
+    overflow: visible;
+}
+
+#stage > svg.stage-svg {  
+    /*--- diable comment:
+    border: 1px solid var(--border);
+	background: var(--canvas-bg);
+	---*/
+	overflow: visible;
+}
+
+
+.hMirror {
+    position: sticky;
+    bottom: 4px;
+    z-index: 5;
+    height: 12px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background: color-mix(in oklab, var(--panel) 85%, transparent);
+    border: 1px solid var(--border);
+    border-top: none;
+}
+
+.hMirrorInner {
+    height: 1px;
+}
+
+.ctl-label {
+    display: inline-block;
+    margin-right: .75rem;
+    color: var(--muted);
+    font-size: .95rem;
+	margin: 0px;
+}
+
+#filter_h3 {
+	padding: 0px !important;
+}
+
+.segmented {
+    display: grid;
+    position: relative; /* 🟢 NEW — prevents radios from entering grid flow */
+    grid-auto-flow: column;
+    gap: 0;
+    border: none;
+    border-radius: 999px;
+    padding: 0;
+    user-select: none;
+    max-width: 100%;
+}
+
+.segmented.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.segmented.stack {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    border-radius: 12px;
+}
+
+.segmented input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 1px; /* 🟢 new — fully hides radios but keeps them accessible */
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.segmented label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    width: 100%;
+    padding: .3rem .5rem;
+    font-size: .95rem;
+    line-height: 1.2;
+    border: 1px solid var(--border);
+    border-left-width: 0;
+    border-radius: 0;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s, box-shadow .15s;
+}
+
+.segmented label:first-of-type {
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-left-width: 1px;
+}
+
+.segmented label:last-of-type {
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+}
+
+/* Existing: normal selected state */
+.segmented input:checked + label {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
+/* Disabled state (generic) – kept for completeness */
+.segmented input:disabled + label {
+    cursor: default;
+    opacity: 0.85;
+}
+
+.segmented input:disabled:checked + label {
+    background: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+}
+
+/* 🔒 Explicit locked mode for wardrobe side */
+.segmented.locked label {
+    cursor: default;
+}
+
+.segmented.locked input:checked + label {
+    background: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+	background-color: #EEEEEEFF;
+}
+
+
+.segmented label:hover {
+    color: var(--ink);
+}
+
+.segmented.stack label {
+    border-radius: 999px;
+    margin: 0;
+}
+
+.segmented .ctl-label {
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    padding: 10px !important;
+    cursor: default !important;
+    box-shadow: none !important;
+	margin: 0px;
+}
+
+#fRooms.segmented.stack {
+    margin: 10px 0;
+    padding: 6px 4px;
+    background: color-mix(in oklab, var(--panel) 96%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.select-pill {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 38px;
+    padding: 0 2.2rem 0 .9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--ink);
+    font-size: .95rem;
+    line-height: 38px;
+    outline: 0;
+    transition: background .15s, box-shadow .15s, border-color .15s;
+    background-image:
+        linear-gradient(transparent, transparent),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230c1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right .7rem center;
+    background-size: 12px 12px;
+}
+
+html[data-theme="dark"] .select-pill {
+    background-image:
+        linear-gradient(transparent, transparent),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23eaf1ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+}
+
+.select-pill:hover {
+    box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
+.select-pill:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
+#cycleGroup.cycle-buttons {
+    margin-top: .25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 999px;
+}
+
+#cycleGroup.cycle-buttons button {
+    background: var(--panel);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    font-size: .9rem;
+    padding: .4rem .9rem;
+    transition: all .15s;
+}
+
+#cycleGroup.cycle-buttons button:first-of-type {
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+}
+
+#cycleGroup.cycle-buttons button:last-of-type {
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+}
+
+#cycleGroup.cycle-buttons button:hover {
+    border-color: var(--accent);
+}
+
+#cycleGroup.cycle-buttons button:active {
+    border-color: var(--accent);
+    transform: translateY(1px);
+}
+
+.dropzone {
+    display: grid;
+    place-items: center;
+    min-height: 64px;
+    border: 2px dashed #000;
+    border-radius: 10px;
+    background: #eee;
+    color: #000;
+    padding: 8px;
+    font-size: .9rem;
+    text-align: center;
+    cursor: pointer;
+    transition: filter .12s, background .12s;
+}
+
+html[data-theme="dark"] .dropzone {
+    background: #eee;
+    color: #000;
+    border-color: #000;
+}
+
+html[data-theme="light"] .dropzone {
+    background: #f0f2f8;
+    color: #0c1220;
+    border-color: #0c1220;
+}
+
+.dropzone:hover {
+    filter: brightness(.98);
+}
+
+.dropzone.dragover {
+    background: #e2e2e2;
+}
+
+.dropzone small {
+    color: #000;
+    opacity: .75;
+}
+
+.sidebar #resetFiltry.btn.full {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: .45rem .9rem;
+    font-size: .9rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* default-hide guarded controls until project-ready */
+body:not(.project-ready) [data-vis-guard] {
+    display: none !important;
+}
+
+/* Injected: grid uses CSS var (--sidebar-w) with 20vw fallback */
+.layout,
+[data-layout] {
+    grid-template-columns: var(--sidebar-w, 20vw) var(--resizer-w, 8px) 1fr;
+}
+
+/* prevent layout transitions when sidebar is locked */
+html.sidebar-locked * {
+    transition: none !important;
+}
+
+.main {
+    min-height: 0;
+    overflow: auto;
+    scrollbar-gutter: stable both-edges;
+}
+
+button:focus-visible,
+[role='button']:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Keep file inputs renderable for reliable click(), but invisible */
+.visually-hidden-file {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+}
+
+/* === Project-only mode (safe UI hide, no JS removal) === */
+/* Hide single-file dropzones but keep DOM/IDs for JS that expects them */
+.row:has(#dzBottom),
+.row:has(#dzTop),
+#dzBottom,
+#dzTop {
+    display: none !important;
+}
+
+/* Anti-flicker: hide Auto-zoom before JS applies stage policy */
+#autoFit {
+    }
+
+
+.empty-message {
+    max-width: 40rem;
+    margin: 40px auto;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--ink);
+    background: color-mix(in oklab, var(--panel) 85%, transparent);
+    border-radius: 8px;
+    border: 1px dashed var(--border);
+}
+
+#scale {
+    width: -webkit-fill-available;
+}
+
+
+
+#logo {
+    width: -webkit-fill-available;
+	max-width: 250px;
+	display: block;      /* Change from default inline to block */
+    margin-left: auto;   /* Automatically center left margin */
+    margin-right: auto;  /* Automatically center right margin */
+	padding: 40px;
+}
+
+/* Dedicated garage controls hidden by default */
+#fGarageEntrance,
+#fGarageOrient {
+        opacity: 0.3;
+    pointer-events: none;
+}
+
+.formcol hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px;
+}
+
+
+/* === Themed scrollbars === */
+
+/* Light mode scrollbars */
+html[data-theme="light"] *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+html[data-theme="light"] *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.06);   /* light track */
+}
+html[data-theme="light"] *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);   /* darker thumb */
+    border-radius: 8px;
+}
+
+
+/* Firefox equivalents */
+html[data-theme="light"] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.35) white;
+}
+
+html[data-theme="dark"] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(234,241,255,0.55) #22272D;
+}
+h3.ctl-label{
+	padding: 10px;
+}
+
+
+/* === Global tooltip overlay (floats above sidebar & canvas) === */
+#helpTooltipLayer {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    display: none;
+
+    max-width: min(320px, 50vw);
+    padding: 8px 10px;
+    background: color-mix(in oklab, var(--panel) 95%, black 5%);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--ink);
+    white-space: normal;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* The small "?" icon itself – keep inside sidebar */
+.help-tip {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: bold;
+    cursor: help;
+    opacity: 0.7;
+    flex-shrink: 0;
+    transition: opacity .15s, background .15s;
+    position: relative;
+}
+
+.help-tip:hover {
+    opacity: 1;
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* IMPORTANT: disable the old ::after-based tooltip if you still have it */
+.help-tip::after {
+    content: none !important;
+}
+

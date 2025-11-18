@@ -1,0 +1,700 @@
+{
+    "guide": {
+        "storageSideSwitch": {
+            "bottom": {
+                "enabled": [
+                    true,
+                    false
+                ],
+                "mode": [
+                    "layers",
+                    "replacement"
+                ],
+                "defaultBottomSide": [
+                    "left",
+                    "right"
+                ],
+                "priority_storage_loc": [
+                    true,
+                    false
+                ]
+            },
+            "top": {
+                "defaultTopSide": [
+                    "left",
+                    "right"
+                ],
+                "enabled": [
+                    true,
+                    false
+                ],
+                "mode": [
+                    "layers",
+                    "replacement"
+                ]
+            }
+        },
+        "mirror": {
+            "enabled": [
+                true,
+                false
+            ]
+        },
+        "vlastnosti": {
+            "orientaceVstupu": [
+                "vlevo",
+                "vpravo"
+            ],
+            "orientaceGaraze": [
+                "svisle",
+                "vodorovně"
+            ],
+            "vjezdGaraze": [
+                "vlevo",
+                "vpravo",
+                "nahore",
+                "dole"
+            ],
+            "samostatneWC": [
+                true,
+                false
+            ],
+            "samostatnaPradelna": [
+                true,
+                false
+            ],
+            "spiz": [
+                true,
+                false
+            ],
+            "samostatnaGaraz": [
+                true,
+                false
+            ],
+            "zadne vlastnosti": [
+                true,
+                false
+            ],
+            "velkaKoupelna": [
+                true,
+                false
+            ],
+            "dttoPokoje": [
+                true,
+                false
+            ]
+        },
+        "bottoms": {
+            "kompatibilni_koupelna": [
+                1,
+                2,
+                3
+            ]
+        },
+        "spojeni_chodeb": [
+            "wide",
+            "narrow"
+        ]
+    },
+    "bottoms": [
+        {
+            "id": "bottom_a1",
+            "name": "Varianta A1",
+            "file": "assets/bottoms/bottom_a1.svg",
+            "tops": [
+                "top_01",
+                "top_02",
+                "top_03",
+                "top_04",
+                "top_05",
+                "top_06",
+				"top_07",
+				"top_08",
+                "top_09",
+                "top_10",
+                "top_11",
+                "top_12",
+                "top_13",
+                "top_14"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vpravo",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": true,
+                "samostatnaGaraz": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultBottomSide": "left"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "bottom_b1",
+            "name": "Varianta B1",
+            "file": "assets/bottoms/bottom_b1.svg",
+            "tops": [
+                "top_01",
+                "top_02",
+                "top_03",
+                "top_04",
+                "top_05",
+                "top_06",
+                "top_09",
+                "top_11",
+                "top_12",
+                "top_13"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vpravo",
+                "orientaceGaraze": "vodorovně",
+                "vjezdGaraze": "vpravo",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": false,
+                "samostatnaGaraz": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultBottomSide": "left"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "bottom_c1",
+            "name": "Varianta C1",
+            "file": "assets/bottoms/bottom_c1.svg",
+            "tops": [
+                "top_01",
+                "top_04",
+                "top_06",
+                "top_07",
+                "top_08",
+                "top_09",
+                "top_11",
+                "top_12",
+                "top_13",
+                "top_014"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "dole",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": false,
+                "samostatnaGaraz": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "replacement",
+                "defaultBottomSide": "right"
+            },
+            "priority_storage_loc": true,
+			"spojeni_chodeb": "narrow",			
+            "kompatibilni_koupelna": 3
+        },
+        {
+            "id": "bottom_d1",
+            "name": "Varianta D1",
+            "file": "assets/bottoms/bottom_d1.svg",
+            "tops": [
+                "top_07",
+                "top_08",
+                "top_09",
+                "top_11",
+                "top_12",
+                "top_13"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "dole",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": false,
+                "samostatnaGaraz": true
+            },
+            "storageSideSwitch": {
+                "enabled": false,
+                "mode": "replacement",
+                "defaultBottomSide": "right"
+            },
+            "priority_storage_loc": true,
+			"spojeni_chodeb": "narrow",
+            "kompatibilni_koupelna": 2
+        },
+        {
+            "id": "bottom_e1",
+            "name": "Varianta E1",
+            "file": "assets/bottoms/bottom_e1.svg",
+            "tops": [
+                "top_07",
+                "top_08",
+                "top_10"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "dole",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": false,
+                "samostatnaPradelna": true,
+                "spiz": false,
+                "samostatnaGaraz": true
+            },
+            "storageSideSwitch": {
+                "enabled": false,
+                "mode": "replacement",
+                "defaultBottomSide": "right"
+            },
+            "priority_storage_loc": true,
+			"spojeni_chodeb": "narrow"
+        },
+        {
+            "id": "bottom_f1",
+            "name": "Varianta F1",
+            "file": "assets/bottoms/bottom_f1.svg",
+            "tops": [
+                "top_01",
+                "top_02",
+                "top_03",
+                "top_04",
+                "top_05",
+                "top_06",
+                "top_11",
+                "top_12",
+                "top_13"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vlevo",
+                "samostatneWC": true,
+                "samostatnaPradelna": true,
+                "spiz": false,
+                "samostatnaGaraz": false,
+                "samostatnaPracovna": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "replacement",
+                "defaultBottomSide": "right"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "bottom_g1",
+            "name": "Varianta G1",
+            "file": "assets/bottoms/bottom_g1.svg",
+            "tops": [
+                "top_01",
+                "top_04",
+                "top_06",
+                "top_07",
+                "top_08",
+                "top_11",
+                "top_12",
+                "top_13",
+                "top_014"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vlevo",
+                "samostatneWC": true,
+                "samostatnaPradelna": true,
+                "spiz": false,
+                "samostatnaGaraz": false,
+                "samostatnaPracovna": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultBottomSide": "left"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide",
+			"kompatibilni_koupelna": 3
+        },
+        {
+            "id": "bottom_h1",
+            "name": "Varianta H1",
+            "file": "assets/bottoms/bottom_h1.svg",
+            "tops": [
+                "top_01",
+                "top_04",
+                "top_06",
+                "top_07",
+                "top_08",
+                "top_09",
+                "top_11",
+                "top_12",
+                "top_13",
+                "top_014"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vlevo",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": false,
+                "samostatnaGaraz": true,
+                "samostatnaPracovna": false
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultBottomSide": "left"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide",
+			"kompatibilni_koupelna": 3
+        },
+        {
+            "id": "bottom_i1",
+            "name": "Varianta i1",
+            "file": "assets/bottoms/bottom_i1.svg",
+            "tops": [
+                "top_01",
+                "top_04",
+                "top_06",
+                "top_07",
+                "top_08",
+                "top_09",
+                "top_11",
+                "top_12",
+                "top_13",
+                "top_014"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vlevo",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": false,
+                "samostatnaGaraz": true,
+                "dvougaraz": true,
+                "samostatnaPracovna": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultBottomSide": "left"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide",
+			"kompatibilni_koupelna": 3
+        },
+        {
+            "id": "bottom_j2",
+            "name": "Varianta J2",
+            "file": "assets/bottoms/bottom_j2.svg",
+            "tops": [
+                "top_07",
+                "top_09",
+                "top_11",
+                "top_12",
+                "top_13"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vlevo",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": true,
+                "samostatnaGaraz": true,
+                "dvougaraz": true,
+                "samostatnaPracovna": false
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "replacement",
+                "defaultBottomSide": "left"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide",
+            "kompatibilni_koupelna": 2
+        },
+        {
+            "id": "bottom_k",
+            "name": "Varianta K",
+            "file": "assets/bottoms/bottom_k.svg",
+            "tops": [
+                "top_01",
+                "top_04",
+                "top_06",
+                "top_07",
+                "top_08",
+                "top_09",
+                "top_11",
+                "top_12",
+                "top_13",
+                "top_014"
+            ],
+            "vlastnosti": {
+                "orientaceVstupu": "vpravo",
+                "orientaceGaraze": "svisle",
+                "vjezdGaraze": "dole",
+                "samostatneWC": true,
+                "samostatnaPradelna": false,
+                "spiz": false,
+                "samostatnaGaraz": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "left"
+            },
+            "priority_storage_loc": false,
+			"spojeni_chodeb": "wide",
+			"kompatibilni_koupelna": 3
+        }
+    ],
+    "tops": [
+        {
+            "id": "top_01",
+            "name": "Varianta 1",
+            "file": "assets/tops/top_01.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_02",
+            "name": "Varianta 2",
+            "file": "assets/tops/top_02.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_03",
+            "name": "Varianta 3",
+            "file": "assets/tops/top_03.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_04",
+            "name": "Varianta 4",
+            "file": "assets/tops/top_04.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_05",
+            "name": "Varianta 5",
+            "file": "assets/tops/top_05.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_06",
+            "name": "Varianta 6",
+            "file": "assets/tops/top_06.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_07",
+            "name": "Varianta 7",
+            "file": "assets/tops/top_07.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": false,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "narrow"
+        },
+		{
+            "id": "top_08",
+            "name": "Varianta 8",
+            "file": "assets/tops/top_08.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": false,
+                "mode": "layers",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "narrow"
+        },
+        {
+            "id": "top_09",
+            "name": "Varianta 9",
+            "file": "assets/tops/top_09.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "replacement",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_10",
+            "name": "Varianta 10",
+            "file": "assets/tops/top_10.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "replacement",
+                "defaultTopSide": "right"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_11",
+            "name": "Varianta 11",
+            "file": "assets/tops/top_11.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "left"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_12",
+            "name": "Varianta 12",
+            "file": "assets/tops/top_12.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "left"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_13",
+            "name": "Varianta 13",
+            "file": "assets/tops/top_13.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "left"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        },
+        {
+            "id": "top_14",
+            "name": "Varianta 14",
+            "file": "assets/tops/top_14.svg",
+            "vlastnosti": {
+                "zadne vlastnosti": true
+            },
+            "storageSideSwitch": {
+                "enabled": true,
+                "mode": "layers",
+                "defaultTopSide": "left"
+            },
+            "mirror": {
+                "enabled": true
+            },
+			"spojeni_chodeb": "wide"
+        }
+    ]
+}
