@@ -210,20 +210,23 @@ button:disabled {
 
 .hMirror {
     position: sticky;
-    bottom: 4px;
+    bottom: 8px;
     z-index: 5;
-    height: 12px;
+    height: 14px;
     width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
-    background: color-mix(in oklab, var(--panel) 85%, transparent);
+    background: #A0AFC6;/* background: color-mix(in oklab, var(--panel) 85%, transparent);*/
     border: 1px solid var(--border);
-    border-top: none;
+    border-top: none;     
+    border: none;  
 }
 
 .hMirrorInner {
     height: 1px;
 }
+
+
 
 .ctl-label {
     display: inline-block;
