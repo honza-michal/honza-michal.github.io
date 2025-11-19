@@ -562,6 +562,8 @@ button:focus-visible,
 
 #scale {
     width: -webkit-fill-available;
+	min-width: 150px;
+	max-width: 250px;
 }
 
 
